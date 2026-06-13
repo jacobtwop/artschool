@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 8 Chains — A Rough Trade Writing School</title>
+<meta name="description" content="Eight 8-week email courses for writers who mean it. The Life, The Craft, The Secrets, The Eye, The Voice, The Narrative, The World, The Practice. Pay what you want, $5 minimum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1c1814;
+    --parchment: #f7f2e8;
+    --cream:     #fdfaf4;
+    --warm-mid:  #7a6a54;
+    --warm-muted:#a8957a;
+    --border:    #e0d8c8;
+    --red:       #8b2635;
+    --red-mid:   #a83244;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+
+  /* ── Layout ── */
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+  .prose { max-width: 66ch; }
+
+  /* ── Nav ── */
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 80px 28px 64px;
+    max-width: 1040px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 400;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 32px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--red-mid);
+  }
+
+  .hero-body {
+    max-width: 62ch;
+  }
+
+  .hero-body p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .hero-body p:last-of-type { margin-bottom: 36px; }
+
+  .hero-meta {
+    font-size: 0.82rem;
+    color: var(--warm-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 36px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta span::before {
+    content: '·';
+    margin-right: 20px;
+    opacity: 0.4;
+  }
+  .hero-meta span:first-child::before { display: none; }
+
+  .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--red-mid); }
+
+  .btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--border);
+    color: var(--warm-mid);
+  }
+  .btn-outline:hover { border-color: var(--ink); color: var(--ink); background: transparent; }
+
+  /* ── Pitch section ── */
+  .pitch {
+    padding: 64px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pitch-grid {
+    display: grid;
+    gap: 48px;
+  }
+
+  @media (min-width: 720px) {
+    .pitch-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+  }
+
+  .pitch h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+
+  .pitch p {
+    font-size: 0.98rem;
+    color: #4a4038;
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .pitch em { font-style: italic; color: var(--ink); }
+  .pitch strong { font-weight: 600; color: var(--ink); }
+
+  /* ── Chains grid ── */
+  .chains-section {
+    padding: 64px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .chains-header {
+    margin-bottom: 48px;
+  }
+
+  .chains-header h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .chains-header p {
+    font-size: 0.95rem;
+    color: var(--warm-mid);
+    max-width: 54ch;
+  }
+
+  .chains-grid {
+    display: grid;
+    gap: 2px;
+  }
+
+  @media (min-width: 640px) {
+    .chains-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 960px) {
+    .chains-grid { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  }
+
+  .chain-card {
+    background: var(--parchment);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .chain-card:hover { background: #f0e8d8; }
+
+  .chain-num {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-muted);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .chain-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+
+  .chain-card h3 em {
+    font-style: italic;
+    display: block;
+    font-size: 0.85em;
+    color: var(--warm-mid);
+    margin-top: 2px;
+  }
+
+  .chain-card p {
+    font-size: 0.83rem;
+    color: var(--warm-mid);
+    line-height: 1.55;
+    flex: 1;
+    margin: 12px 0 16px;
+  }
+
+  .chain-link {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+    display: block;
+  }
+
+  /* ── About ── */
+  .about {
+    padding: 64px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .about-grid {
+    display: grid;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (min-width: 720px) {
+    .about-grid { grid-template-columns: 200px 1fr; }
+  }
+
+  .about-img {
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  .about h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+
+  .about p {
+    font-size: 0.98rem;
+    color: #4a4038;
+    line-height: 1.75;
+    margin-bottom: 16px;
+    max-width: 58ch;
+  }
+
+  .about p strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Newsletter ── */
+  .newsletter {
+    padding: 64px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .newsletter h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .newsletter p {
+    font-size: 0.98rem;
+    color: var(--warm-mid);
+    max-width: 50ch;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.78rem;
+    color: var(--warm-muted);
+  }
+
+  footer a {
+    color: var(--warm-muted);
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--ink); }
+
+  .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://artschool.jacobclifton.com" class="nav-logo">A Rough Trade Writing School</a>
+  <ul class="nav-links">
+    <li><a href="https://www.patreon.com/jacobtwop">Patreon</a></li>
+    <li><a href="https://jacobclifton.com/art-school/">About</a></li>
+    <li><a href="https://jacobclifton.com">Jacob Clifton</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <span class="hero-eyebrow">A Rough Trade Writing School · The 8 Chains</span>
+  <h1>Eight weeks.<br>One chain.<br><em>Your whole writing life.</em></h1>
+  <div class="hero-body">
+    <p>The 8 Chains are email courses — one a week for eight weeks, arriving in your inbox like letters from someone who takes your writing as seriously as you do. Each Chain covers one of the eight fundamental territories of the writing life. Together, they cover everything.</p>
+    <p>They're not a curriculum in the academic sense. They're more like having a long, specific, honest conversation about what writing actually requires — and what it's actually for.</p>
+  </div>
+  <div class="hero-meta">
+    <span>Pay what you want · $5 minimum · $25 suggested</span>
+    <span>Eight 8-week email courses</span>
+    <span>Start any time</span>
+  </div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;">
+    <a href="#chains" class="btn">Browse the Chains →</a>
+    <a href="https://www.patreon.com/jacobtwop" class="btn btn-outline">Join the School</a>
+  </div>
+</section>
+
+<!-- ── PITCH ── -->
+<section class="pitch">
+  <div class="pitch-grid">
+    <div>
+      <h2>What a Chain actually is</h2>
+      <p>Each week, an email arrives. Not a newsletter. Not a tip sheet. A lesson — the kind that assumes you're serious and treats you accordingly.</p>
+      <p>The lessons are built around Wild Magic, a set of writing techniques centered on trust, wonder, and voice discovery. The goal is never to make you write like someone else. It's to help you figure out what you already know — and how to get it onto the page.</p>
+      <p><em>Anyone can write. Not everyone can trust their voice.</em> That's what the Chains work on.</p>
+    </div>
+    <div>
+      <h2>How they work</h2>
+      <p>You purchase a Chain. Eight weeks later, you've covered the territory. Each email includes the lesson itself, exercises if you want them, and enough room to disagree.</p>
+      <p>You can take one Chain or all eight. You can take them in order or by what feels most urgent. The <strong>Life</strong> and the <strong>Craft</strong> are good starting places if you're not sure — but start where you actually are, not where you think you're supposed to be.</p>
+      <p>Pay what you want. The minimum is $5. The suggested price is $25. If you can pay more, you're helping someone else pay less.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CHAINS GRID ── -->
+<section class="chains-section" id="chains">
+  <div class="chains-header">
+    <h2>The Eight Chains</h2>
+    <p>Each one covers a different territory. All of them assume you're a writer already — even if you don't believe that yet.</p>
+  </div>
+  <div class="chains-grid">
+
+    <a href="https://learn.jacobclifton.com/products/chain-one" class="chain-card">
+      <div>
+        <span class="chain-num">Chain One</span>
+        <h3>The Life <em>Business of Writing</em></h3>
+        <p>The writing life doesn't support itself automatically. Contracts, time, money, identity, the question of whether any of this is worth it — The Life covers the territory most writing teachers avoid.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+    <a href="https://learn.jacobclifton.com/products/chain-two" class="chain-card">
+      <div>
+        <span class="chain-num">Chain Two</span>
+        <h3>The Craft <em>Creation and Troubleshooting</em></h3>
+        <p>What actually happens when you write — and when you can't. The Craft goes into the mechanics of making things: how drafts work, how blocks work, and how to get out of your own way.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+    <a href="https://learn.jacobclifton.com/products/chain-three" class="chain-card">
+      <div>
+        <span class="chain-num">Chain Three</span>
+        <h3>The Secrets <em>The Publishing Business</em></h3>
+        <p>The industry nobody explains honestly. Queries, agents, editors, small presses, self-publishing, the whole strange ecosystem — The Secrets tells you what it actually looks like from the inside.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+    <a href="https://learn.jacobclifton.com/products/chain-four" class="chain-card">
+      <div>
+        <span class="chain-num">Chain Four</span>
+        <h3>The Eye <em>The Critical Eye</em></h3>
+        <p>How to read your own work. How to read other people's work. How to develop a critical faculty that helps you revise instead of one that just makes you feel bad about everything you write.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+    <a href="https://learn.jacobclifton.com/products/chain-five" class="chain-card">
+      <div>
+        <span class="chain-num">Chain Five</span>
+        <h3>The Voice <em>Finding Your Own</em></h3>
+        <p>The thing people mean when they say a writer has "it" — and the thing most writing advice accidentally trains you out of. The Voice is about finding what only you can say, and saying it without apology.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+    <a href="https://learn.jacobclifton.com/products/chain-six" class="chain-card">
+      <div>
+        <span class="chain-num">Chain Six</span>
+        <h3>The Narrative <em>Creating in Different Places</em></h3>
+        <p>Story structure, essay form, hybrid work, the places where genre dissolves — The Narrative covers how different forms make different demands, and how to find the form that fits what you're actually trying to say.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+    <a href="https://learn.jacobclifton.com/products/chain-seven" class="chain-card">
+      <div>
+        <span class="chain-num">Chain Seven</span>
+        <h3>The World <em>Worldbuilding</em></h3>
+        <p>Not just for fantasy and science fiction — every piece of writing creates a world, with rules, logic, and consequences. The World covers how to build one that holds, whether you're writing literary fiction or epic fantasy.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+    <a href="https://learn.jacobclifton.com/products/chain-eight" class="chain-card">
+      <div>
+        <span class="chain-num">Chain Eight</span>
+        <h3>The Practice <em>Maintaining a Writing Practice</em></h3>
+        <p>The hardest one. Not because the material is difficult but because a writing practice is the thing most writers want and the thing they most consistently fail to keep. The Practice is about why, and what to do about it.</p>
+      </div>
+      <span class="chain-link">Start this Chain →</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about">
+  <div class="about-grid">
+    <img src="https://jacobclifton.com/wp-content/uploads/2026/03/phoneImageCapture1774122460164.jpg" alt="Jacob Clifton" class="about-img">
+    <div>
+      <h2>Who's writing these</h2>
+      <p>I'm Jacob Clifton. For fifteen years I was a flagship writer at Television Without Pity — one of the most widely-read TV criticism sites of its era, at its peak about a million readers a week. I've written for Tor.com, Vulture, BuzzFeed, the Austin Chronicle. I've been teaching writers for years through A Rough Trade Writing School, through Patreon, through one-on-one work.</p>
+      <p>The 8 Chains are built around what I've actually learned — about writing, about being a writer, about what it costs and what it gives back. They're not based on a theory. They're based on doing it, badly and well, for a very long time.</p>
+      <p><strong>The thing that makes you awesome is the thing that makes you suck.</strong> The Chains exist to help you figure out which is which — and what to do about either one.</p>
+      <a href="https://www.patreon.com/jacobtwop" class="btn" style="margin-top:8px;">Join the School on Patreon →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
+<section class="newsletter">
+  <h2>Stay close</h2>
+  <p>Letters about writing, dogs, television, and the strange work of paying close attention to things. Free, whenever there's something worth saying.</p>
+  <script async data-uid="9a79779516" src="https://clifton-creative.kit.com/9a79779516/index.js"></script>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>© 2026 Jacob Clifton · A Rough Trade Writing School</div>
+  <nav class="footer-links">
+    <a href="https://artschool.jacobclifton.com">Home</a>
+    <a href="https://artschool.jacobclifton.com/chains/">The 8 Chains</a>
+    <a href="https://www.patreon.com/jacobtwop">Patreon</a>
+    <a href="https://jacobclifton.com">jacobclifton.com</a>
+    <a href="https://cliftoncreative.agency">Clifton Creative</a>
+  </nav>
+</footer>
+
+</body>
+</html>
