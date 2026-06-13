@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Rough Trade Writing School</title>
+<meta name="description" content="A writing school for writers who mean it. The 8 Chains email courses, community on Patreon, and one-on-one sessions with Jacob Clifton.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:       #1c1814;
+    --parchment: #f7f2e8;
+    --cream:     #fdfaf4;
+    --warm-mid:  #7a6a54;
+    --warm-muted:#a8957a;
+    --border:    #e0d8c8;
+    --red:       #8b2635;
+    --red-mid:   #a83244;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+
+  nav {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm-mid);
+    text-decoration: none;
+  }
+  .nav-links a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero {
+    padding: 96px 28px 80px;
+    max-width: 1040px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-weight: 400;
+    line-height: 1.0;
+    color: var(--ink);
+    margin-bottom: 36px;
+    max-width: 14ch;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--red-mid); }
+
+  .hero-body p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 20px;
+    max-width: 60ch;
+  }
+
+  .btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    padding: 14px 28px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    transition: background 0.2s;
+    margin-top: 8px;
+  }
+  .btn:hover { background: var(--red-mid); }
+
+  .btn-ghost {
+    background: transparent;
+    border: 1.5px solid var(--border);
+    color: var(--warm-mid);
+  }
+  .btn-ghost:hover { border-color: var(--ink); color: var(--ink); background: transparent; }
+
+  /* Offers */
+  .offers {
+    padding: 64px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .offers h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 400;
+    margin-bottom: 48px;
+  }
+
+  .offers-grid {
+    display: grid;
+    gap: 2px;
+  }
+
+  @media (min-width: 720px) {
+    .offers-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  .offer-card {
+    background: var(--parchment);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .offer-tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--warm-muted);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .offer-card h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: var(--ink);
+  }
+
+  .offer-card p {
+    font-size: 0.9rem;
+    color: var(--warm-mid);
+    line-height: 1.65;
+    flex: 1;
+    margin-bottom: 24px;
+  }
+
+  .offer-link {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--red);
+    text-decoration: none;
+  }
+  .offer-link:hover { text-decoration: underline; }
+
+  /* Newsletter */
+  .newsletter {
+    padding: 64px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .newsletter h2 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .newsletter p {
+    font-size: 0.98rem;
+    color: var(--warm-mid);
+    max-width: 48ch;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+
+  /* Footer */
+  footer {
+    padding: 32px 28px;
+    max-width: 1040px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 0.78rem;
+    color: var(--warm-muted);
+  }
+
+  footer a { color: var(--warm-muted); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="https://artschool.jacobclifton.com" class="nav-logo">A Rough Trade Writing School</a>
+  <ul class="nav-links">
+    <li><a href="https://artschool.jacobclifton.com/chains/">The 8 Chains</a></li>
+    <li><a href="https://www.patreon.com/jacobtwop">Patreon</a></li>
+    <li><a href="https://jacobclifton.com">Jacob Clifton</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <span class="eyebrow">A Rough Trade Writing School</span>
+  <h1>Writing school for writers who <em>mean it.</em></h1>
+  <div class="hero-body">
+    <p>Not a productivity course. Not a content system. A writing school — built around Wild Magic, a set of techniques centered on trust, wonder, and learning to say the thing only you can say.</p>
+    <p>For writers of literary fiction, creative nonfiction, and the strange hybrid work that doesn't fit neatly in either category. For writers who are serious about the practice even when — especially when — the practice isn't going well.</p>
+  </div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:36px;">
+    <a href="https://artschool.jacobclifton.com/chains/" class="btn">The 8 Chains →</a>
+    <a href="https://www.patreon.com/jacobtwop" class="btn btn-ghost">Join on Patreon</a>
+  </div>
+</section>
+
+<section class="offers">
+  <h2>What the School offers</h2>
+  <div class="offers-grid">
+
+    <div class="offer-card">
+      <span class="offer-tag">Email Courses</span>
+      <h3>The 8 Chains</h3>
+      <p>Eight 8-week email courses — one for each fundamental territory of the writing life. The Life, The Craft, The Secrets, The Eye, The Voice, The Narrative, The World, The Practice. Pay what you want, $5 minimum.</p>
+      <a href="https://artschool.jacobclifton.com/chains/" class="offer-link">Browse the Chains →</a>
+    </div>
+
+    <div class="offer-card">
+      <span class="offer-tag">Community</span>
+      <h3>Patreon</h3>
+      <p>The school's home. Writing dispatches, behind-the-scenes work-in-progress, the Wild Writer's Herbal and Grimoire PDFs, dog photos, and a community of writers who take this seriously. From $5/month.</p>
+      <a href="https://www.patreon.com/jacobtwop" class="offer-link">Join on Patreon →</a>
+    </div>
+
+    <div class="offer-card">
+      <span class="offer-tag">One-on-One</span>
+      <h3>Wild Magic Counsel</h3>
+      <p>A session with Jacob Clifton — for blocked writers, writers at crossroads, writers who need someone to think alongside them about their work. By appointment.</p>
+      <a href="https://cal.com/cliftoncreative" class="offer-link">Book a session →</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2>The Wild Magic newsletter</h2>
+  <p>Letters about writing, dogs, television, and paying close attention to things. Free, whenever there's something worth saying.</p>
+  <script async data-uid="9a79779516" src="https://clifton-creative.kit.com/9a79779516/index.js"></script>
+</section>
+
+<footer>
+  <div>© 2026 Jacob Clifton · A Rough Trade Writing School</div>
+  <nav class="footer-links">
+    <a href="https://artschool.jacobclifton.com/chains/">The 8 Chains</a>
+    <a href="https://www.patreon.com/jacobtwop">Patreon</a>
+    <a href="https://jacobclifton.com">jacobclifton.com</a>
+    <a href="https://cliftoncreative.agency">Clifton Creative</a>
+  </nav>
+</footer>
+
+</body>
+</html>

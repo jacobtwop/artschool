@@ -1,0 +1,5 @@
+# Kit product URLs — serve through artschool subdomain
+/products/*  https://artschool.jacobclifton.com/products/:splat  200
+
+# arough.trade legacy redirect
+https://arough.trade/*  https://artschool.jacobclifton.com/:splat  301
