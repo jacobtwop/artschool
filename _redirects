@@ -3,3 +3,6 @@
 
 # arough.trade legacy redirect
 https://arough.trade/*  https://artschool.jacobclifton.com/:splat  301
+
+/blog        https://cliftoncreative.agency/category/artschool/  200
+/blog/*      https://cliftoncreative.agency/category/artschool/:splat  200
